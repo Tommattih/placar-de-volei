@@ -1,0 +1,58 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--text);
+}
+
+:root{
+  /* COLOR */
+  --border-stage: #00ff9562;
+  --background: #030b0e;
+  --background-stage: #1a2422;
+  --border-text: #00ff95e7;
+  --text: #faebd7;
+}
+body{
+  background: var(--background) ;
+  box-sizing: border-box;
+}
+
+.placar{
+  background: var(--background-stage);
+  border: solid var(--border-stage);
+  border-radius: 1rem;
+
+  width: 70vw;
+  height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  padding: 1.5rem;
+  margin: 10rem auto;
+
+}
+
+.content,
+.sets-group{
+  display: flex;
+  padding: .5rem;
+}
+
+.metade{
+  border: ridge var(--border-text);
+  width: 32vw;
+  padding: .5rem;
+  text-align: center;
+  margin: 0 .8rem;
+}
+
+#pontuacaoA,
+#pontuacaoB{
+  padding: 6rem .5rem;
+  font-size: 5rem;
+  cursor: pointer;
+}
