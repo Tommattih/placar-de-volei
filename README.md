@@ -37,6 +37,9 @@ Projetinho baseado na Imersão Javascript do zero da Cubos Academy
     
     -> Modificação do _cursor_;
     
+    -> Ajustes de responsividade;
+    
+    
 ---
 
 * Interatividade no Javascript:
@@ -55,4 +58,6 @@ Projetinho baseado na Imersão Javascript do zero da Cubos Academy
     
     -> Zerar o placar para um novo Set;
     
-    -> Verificar se algum time ganhou 2 Sets e mostrar mensagem que venceu a partida!
+    -> Fazer a soma dos pontos do Set;
+    
+    -> Verificar se algum time ganhou 2 Sets e mostrar mensagem que venceu a partida e quantos pontos fez no total!
