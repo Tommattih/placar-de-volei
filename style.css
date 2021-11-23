@@ -24,35 +24,74 @@ body{
   border-radius: 1rem;
 
   width: 70vw;
-  height: 50vh;
+  height: 42vh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 
-  padding: 3rem 2rem;
+  padding: 1.5rem;
   margin: 10rem auto;
-
 }
 
-.content,
+.placar .content,
 .sets-group{
   display: flex;
   padding: .5rem;
 }
 
-.metade{
+.metade {
   border: ridge var(--border-text);
-  width: 32vw;
-  padding: .5rem;
+  width: 30vw;
+  padding: 0.5rem;
   text-align: center;
-  margin: 0 .8rem;
+  margin: 0 0.4rem;
 }
 
-#pontuacaoA,
+#pontuacaoA, 
 #pontuacaoB{
-  padding: 6rem .5rem;
-  font-size: 5rem;
-  cursor: pointer;
+  padding: 2.5rem 0.5rem;
+  font-size: 3rem;
+}
+
+.sets{
+  display: flex;
+  font-size: 1.1rem;
+}
+
+/* TABLET */
+@media only screen and (min-width: 768px){
+  .placar{
+    width: 64vw;
+  }
+
+  .sets{
+    font-size: 1.2rem;
+  }
+}
+
+/* DESKTOP */
+@media only screen and (min-width: 992px){
+  .placar{
+    width: 72vw;
+    height: 56vh;
+  }
+
+  .metade{
+    width: 32vw;
+    margin: 0 .8rem;
+  }
+
+  .sets{
+    display: flex;
+    font-size: 1.5rem;
+  }
+
+  #pontuacaoA,
+  #pontuacaoB{
+    padding: 6rem .5rem;
+    font-size: 5rem;
+    cursor: pointer;
+  }
 }

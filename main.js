@@ -41,7 +41,7 @@ function verificarFimDoSet() {
     alert(`O time ${nomeTimeA} venceu o set com ${pontoA} pontos!`);
     setA = setA + 1;
     setA_html.innerText = setA;
-    gravarZerarPontos();
+    gravarZerarPontosDoSet();
     verificarFimDoJogo();
 
   }
@@ -49,7 +49,7 @@ function verificarFimDoSet() {
     alert(`O time ${nomeTimeB} venceu o set com ${pontoB} pontos!`);
     setB = setB +1;
     setB_html.innerText = setB;
-    gravarZerarPontos();
+    gravarZerarPontosDoSet();
     verificarFimDoJogo();
   }
 }
@@ -57,7 +57,10 @@ function verificarFimDoSet() {
 let arraySetPontosA = [];
 let arraySetPontosB = [];
 
-function gravarZerarPontos(){
+totalDePontosA = 0;
+totalDePontosB = 0;
+
+function gravarZerarPontosDoSet(){
   //salvar pontuação
   arraySetPontosA.push(pontoA);
   arraySetPontosB.push(pontoB);
@@ -71,21 +74,19 @@ function gravarZerarPontos(){
 
 function verificarFimDoJogo(){
   if (setA == 2){
-    alert(`O time ${nomeTimeA} venceu a partida por ${setA} x ${setB}`);
+    for (let pontosDoSetA of arraySetPontosA){
+      totalDePontosA = totalDePontosA + pontosDoSetA;
+    }
+    alert(`O time ${nomeTimeA} fez um total de ${totalDePontosA} pontos e venceu a partida por ${setA} x ${setB}`);
     zerarSet();
   }
   if (setB == 2){
-    alert(`O time ${nomeTimeB} venceu a partida por ${setB} x ${setA}`);
+    alert(`O time ${nomeTimeB} fez um total de ${totalDePontosB} pontos e venceu a partida por ${setB} x ${setA}`);
     zerarSet();
   }
 }
 
 function zerarSet(){
-  // for (pontosA = 0, pontosA = arraySetPontosA++){
-    
-  //   alert(`Pontos da partida: ${nomeTimeA} fez ${pontosA} e ${nomeTimeB} fez ${pontosB}`);
-  // }
-
   let setA = 0;
   let setB = 0;
   setA_html.innerText = setA;
