@@ -81,6 +81,9 @@ function verificarFimDoJogo(){
     zerarSet();
   }
   if (setB == 2){
+    for (let pontosDoSetB of arraySetPontosB){
+      totalDePontosB = totalDePontosB + pontosDoSetB;
+    }
     alert(`O time ${nomeTimeB} fez um total de ${totalDePontosB} pontos e venceu a partida por ${setB} x ${setA}`);
     zerarSet();
   }
