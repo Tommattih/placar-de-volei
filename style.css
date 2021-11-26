@@ -18,6 +18,18 @@ body{
   box-sizing: border-box;
 }
 
+.content.newgame {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+.newgame button{
+  background: none;
+  border: none;
+  font-size: .8rem;
+}
+
 .placar{
   background: var(--background-stage);
   border: solid var(--border-stage);
@@ -32,7 +44,7 @@ body{
   justify-content: space-around;
 
   padding: 1.5rem;
-  margin: 10rem auto;
+  margin: 2rem auto;
 }
 
 .placar .content,
@@ -47,6 +59,8 @@ body{
   padding: 0.5rem;
   text-align: center;
   margin: 0 0.4rem;
+
+  font-size: .8rem;
 }
 
 #pontuacaoA, 
@@ -57,22 +71,44 @@ body{
 
 .sets{
   display: flex;
-  font-size: 1.1rem;
+  font-size: .8rem;
 }
 
 /* TABLET */
 @media only screen and (min-width: 768px){
+  .newgame button{
+    font-size: 1rem;
+  }
+
   .placar{
     width: 64vw;
   }
 
   .sets{
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
 /* DESKTOP */
 @media only screen and (min-width: 992px){
+  .newgame .metade,
+  .score-a,
+  .score-b{
+    transition: .4s;
+  }
+  
+  .newgame .metade:hover,
+  .score-a:hover,
+  .score-b:hover{
+    background: var(--border-stage);
+    filter: brightness(1.5);
+  }
+
+  .newgame button{
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
   .placar{
     width: 72vw;
     height: 56vh;
@@ -81,11 +117,12 @@ body{
   .metade{
     width: 32vw;
     margin: 0 .8rem;
+    font-size: 1rem;
   }
 
   .sets{
     display: flex;
-    font-size: 1.5rem;
+    font-size: 1.1rem
   }
 
   #pontuacaoA,

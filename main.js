@@ -5,8 +5,8 @@ const nomeTimeB = prompt('Nome do time B:');
 const timeA_html = document.getElementById('nomeTimeA');
 const timeB_html = document.getElementById('nomeTimeB');
 
-timeA_html.innerText = nomeTimeA;
-timeB_html.innerText = nomeTimeB;
+timeA_html.innerText = nomeTimeA.toUpperCase();
+timeB_html.innerText = nomeTimeB.toUpperCase();
 
 //PONTUAÇÃO DO SET
 const pontuacaoA_html = document.getElementById('pontuacaoA');
@@ -54,9 +54,10 @@ function verificarFimDoSet() {
   }
 }
 
+//PONTUAÇÃO NOS SETS
 let arraySetPontosA = [];
 let arraySetPontosB = [];
-
+//soma dos pontos do set armazenados nos respectivos arrays acima
 totalDePontosA = 0;
 totalDePontosB = 0;
 
@@ -64,34 +65,40 @@ function gravarZerarPontosDoSet(){
   //salvar pontuação
   arraySetPontosA.push(pontoA);
   arraySetPontosB.push(pontoB);
-  //zerar placar
-  pontoA = 0;
-  pontoB = 0;
-  //atualizar na tela
-  pontuacaoA_html.innerText = pontoA;
-  pontuacaoB_html.innerText = pontoB;
+  
+  zerarPontos()
 }
 
 function verificarFimDoJogo(){
   if (setA == 2){
-    for (let pontosDoSetA of arraySetPontosA){
+    for (let pontosDoSetA of arraySetPontosA) {
       totalDePontosA = totalDePontosA + pontosDoSetA;
     }
-    alert(`O time ${nomeTimeA} fez um total de ${totalDePontosA} pontos e venceu a partida por ${setA} x ${setB}`);
-    zerarSet();
+    alert(`O time ${nomeTimeA} fez um total de ${totalDePontosA} pontos e venceu o jogo por ${setA} x ${setB}`);
+    zerarTudo();
   }
   if (setB == 2){
-    for (let pontosDoSetB of arraySetPontosB){
+    for (let pontosDoSetB of arraySetPontosB) {
       totalDePontosB = totalDePontosB + pontosDoSetB;
     }
-    alert(`O time ${nomeTimeB} fez um total de ${totalDePontosB} pontos e venceu a partida por ${setB} x ${setA}`);
-    zerarSet();
+    alert(`O time ${nomeTimeB} fez um total de ${totalDePontosB} pontos e venceu o jogo por ${setB} x ${setA}`);
+    zerarTudo();
   }
 }
 
-function zerarSet(){
-  let setA = 0;
-  let setB = 0;
+function zerarPontos(){
+//zerar placar
+pontoA = 0;
+pontoB = 0;
+//atualizar na tela
+pontuacaoA_html.innerText = pontoA;
+pontuacaoB_html.innerText = pontoB;
+}
+
+function zerarTudo(){
+  setA = 0;
+  setB = 0;
   setA_html.innerText = setA;
   setB_html.innerText = setB;
+  zerarPontos()
 }
