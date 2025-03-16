@@ -3,6 +3,7 @@
   margin: 0;
   font-family: 'Orbitron', sans-serif;
   color: var(--text);
+  user-select: none;
 }
 
 :root{
@@ -16,7 +17,6 @@
 body{
   background: var(--background) ;
   box-sizing: border-box;
-  user-select: none;
 }
 
 .content.newgame {
